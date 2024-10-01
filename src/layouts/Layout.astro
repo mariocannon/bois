@@ -1,0 +1,29 @@
+---
+import Navigation from "../components/navigation.astro";
+import Footer from "../components/footer.astro";
+const { description, title } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <Navigation />
+    
+    <article>
+      <slot /> <!-- your content is injected here -->
+    </article>
+    <Footer />
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script is:inline src="./assets/vendor/preline/preline.js"></script>
+
+  </body>
+  <style>
+    h1 {
+      font-size: 2rem;
+    }
+  </style>
+</html>
